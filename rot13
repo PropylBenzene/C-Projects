@@ -1,0 +1,55 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int strsize = 0;
+string clearinput;
+string cipheroutput;
+
+string rot13(string clearinput, string cipheroutput);
+
+int main()
+{
+    getline (cin, clearinput);
+//    clearinput.erase(clearinput.length()-1);
+    strsize = clearinput.length();
+    cout << "Length = " << clearinput.length() << "\n";
+    cout << "New Letter = " << char(clearinput[0] + 13) << "\n";
+    
+    rot13(clearinput, cipheroutput);
+    cout << cipheroutput;
+    
+    
+//    cout << clearinput;
+//    cout << char(85);
+    
+    system("PAUSE");
+}
+
+
+string rot13(string clearinput, string cipheroutput)
+
+{
+     int strsize = 0;
+     int count = 0;
+
+     cout << "Clear Input - " << clearinput;
+     strsize = clearinput.length();
+     cout << "String Size in Loop - " << strsize << "\n";  
+     while (strsize > count)
+           {   
+               cout << "New Character - " << char(clearinput[count] + 13) << "\n";
+               cipheroutput += char(clearinput[count] + 13);
+               cout << cipheroutput << "\n";
+               count++; 
+               cout << "Current Count - " << count << "\n";
+
+               cout << "Length of String Size - " << strsize << "\n";
+               
+                          
+           }
+    cout << cipheroutput << "\n";       
+    return cipheroutput;
+    
+}
